@@ -6,13 +6,13 @@ import (
 )
 
 func main() {
-	//decoder()
+	decoder()
 	encoder()
 }
 
 func decoder() {
 	var dest string
-	if err := resp.Unmarshal([]byte("$3\r\nFoo\r\n"), &dest); err != nil {
+	if err := resp.Unmarshal([]byte("+OK\r\n"), &dest); err != nil {
 		panic(err)
 	}
 	fmt.Println(dest)
